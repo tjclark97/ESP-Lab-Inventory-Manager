@@ -1,7 +1,7 @@
-# RottenPotatoes demo app: getting started
+# SW Group: Real Time Inventory Database for the TAMU ESP Labs
+This app was made for Software Engineering(CSCE 431) under Philip Ritchey. The objective of this project is to create a software as a service for a customer in College Station, TX. Our software will be a inventroy database for the embedded signal processing.
 
-This app is associated with the free [online
-course](http://www.saas-class.org) and (non-free)
-[ebook](http://www.saasbook.info) Engineering Software as a Service.
 
-To start working on the Rails Intro homework, please follow [the instructions](instructions/README.md).
+Link to App: https://esp-lab.herokuapp.com/
+
+
