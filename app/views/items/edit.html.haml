@@ -1,0 +1,28 @@
+-# edit.html.haml using partial
+
+%h2 Edit Existing Item
+
+= form_tag item_path(@item), :method => :put do
+
+  = label :item, :category, 'Category'
+  = text_field :item, 'category'
+
+  = label :item, :name, 'Name'
+  = text_field :item, 'name'
+
+  = label :item, :quantity, 'Quantity'
+  = text_field :item, 'quantity'
+
+  = label :item, :condition, 'Condition'
+  = text_field :item, 'condition'
+
+  = label :item, :available, "Availability"
+  = select :item, :available, ['1', '0']
+
+  = label :item, :description, "Description"
+  = text_field :item, 'description'
+
+  = label :item, :purchase_link, "Purchase Link"
+  = text_field :item, "purchase_link"
+
+  = submit_tag 'Update Movie Info', :class => 'btn btn-primary'
