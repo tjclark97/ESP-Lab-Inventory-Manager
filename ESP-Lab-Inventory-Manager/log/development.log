@@ -1,0 +1,1503 @@
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:18:43 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.10) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.10) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (20.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateItems (20191016142446)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "name" varchar, "quantity" integer, "condition" integer, "available" integer, "description" varchar, "purchase_link" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191016142446"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("category", "name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category", "Microscopes"], ["name", "AmScope B490 Compound Microscope"], ["quantity", 20], ["condition", 10], ["available", 1], ["description", "Device to view small structures"], ["purchase_link", "random.com"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 356ms (Views: 352.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/default.self-dc505020969b9b460695f7a9f2eab0453f2516cdd2b84ed549f39a0b89b43b6b.css?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 165.91.13.252 at 2019-10-17 17:20:13 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:25:51 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:25:51 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 212ms (Views: 209.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:25:54 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    18: 
+    19: = form_tag items_path do
+    20: 
+    21:   -#= label :movie, :title, 'Title'
+    22:   -#= text_field :movie, 'title'
+    23: 
+    24:   -#= label :movie, :rating, 'Rating'
+  app/views/items/new.html.haml:21
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.6ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:26:37 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:26:38 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.7ms)
+Completed 200 OK in 212ms (Views: 209.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:26:40 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    18: 
+    19: = form_tag items_path do
+    20: 
+    21:   -#= label :movie, :title, 'Title'
+    22:   -#= text_field :movie, 'title'
+    23: 
+    24:   -#= label :movie, :rating, 'Rating'
+  app/views/items/new.html.haml:21
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:27:14 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:27:14 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (21.2ms)
+Completed 200 OK in 220ms (Views: 215.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:27:17 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected ')'
+)).to_s);).to_s);; _hamlout.bu...
+^
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected ensure, expecting ')'
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                         ^~~~~~
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected end, expecting ')'
+...uffer.upper if @haml_buffer;end;
+...                            ^~~
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:23: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  app/views/items/new.html.haml:20: syntax error, unexpected ')'
+  app/views/items/new.html.haml:20: syntax error, unexpected ensure, expecting ')'
+  app/views/items/new.html.haml:20: syntax error, unexpected end, expecting ')'
+  app/views/items/new.html.haml:23: syntax error, unexpected end, expecting ')'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:28:10 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:28:10 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.2ms)
+Completed 200 OK in 210ms (Views: 207.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:28:12 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:28:20 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:28:48 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:28:48 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 215ms (Views: 211.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:28:51 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected ')'
+)).to_s);).to_s);; _hamlout.bu...
+^
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected ensure, expecting ')'
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                         ^~~~~~
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:20: syntax error, unexpected end, expecting ')'
+...uffer.upper if @haml_buffer;end;
+...                            ^~~
+/home/ubuntu/environment/ESP-Lab-Inventory-Manager/app/views/items/new.html.haml:23: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  app/views/items/new.html.haml:20: syntax error, unexpected ')'
+  app/views/items/new.html.haml:20: syntax error, unexpected ensure, expecting ')'
+  app/views/items/new.html.haml:20: syntax error, unexpected end, expecting ')'
+  app/views/items/new.html.haml:23: syntax error, unexpected end, expecting ')'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.2ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:29:32 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:29:32 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (21.1ms)
+Completed 200 OK in 214ms (Views: 211.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:29:34 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (29.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x0000558fe54be298>:0x00007f659867a3b8>):
+    21:   
+    22:   %br
+    23:   = label :item, 'catagory'
+    24:   = f.text_field :category
+    25:   %br
+    26:   = label :item, :name, 'Name'
+    27:   = f.text_field :name
+  app/views/items/new.html.haml:24:in `block in _app_views_items_new_html_haml__1114780704799935870_70037162711480'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml__1114780704799935870_70037162711480'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:31:41 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:31:41 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.7ms)
+Completed 200 OK in 212ms (Views: 209.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:31:43 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    21:   
+    22:   %br
+    23:   = label :item, 'catagory'
+    24:   = text_field :category
+    25:   %br
+    26:   = label :item, :name, 'Name'
+    27:   = text_field :name
+  app/views/items/new.html.haml:24:in `block in _app_views_items_new_html_haml___1655825951496257692_70099408412960'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml___1655825951496257692_70099408412960'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:32:16 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:32:17 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 214ms (Views: 210.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:32:19 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    21:   
+    22:   %br
+    23:   = label :item, :name, 'Name'
+    24:   = text_field :name
+    25:   %br
+    26:   = label :item, :quantity, 'Quantity'
+    27:   = number_field :quantity
+  app/views/items/new.html.haml:24:in `block in _app_views_items_new_html_haml__1173100101210527628_70132323183040'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml__1173100101210527628_70132323183040'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:33:35 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:33:35 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 212ms (Views: 209.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:33:37 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    24:   = text_field :category, 'title'
+    25:   %br
+    26:   = label :item, :name, 'Name'
+    27:   = text_field :name
+    28:   %br
+    29:   = label :item, :quantity, 'Quantity'
+    30:   = number_field :quantity
+  app/views/items/new.html.haml:27:in `block in _app_views_items_new_html_haml___212777508431631802_70156583128760'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml___212777508431631802_70156583128760'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.6ms)
+
+
+Started GET "/" for 165.91.13.252 at 2019-10-17 17:34:39 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.13.252 at 2019-10-17 17:34:39 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (22.3ms)
+Completed 200 OK in 220ms (Views: 217.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.13.252 at 2019-10-17 17:34:42 +0000
+Cannot render console from 165.91.13.252! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    36:   = number_field :available, '1'
+    37:   %br
+    38:   = label :item, :check, 'Checked'
+    39:   = select :checked, options_for_select([['YES', true], ['NO', false]])
+    40:   %br
+    41:   = label :item, :purchase_link, 'Item Link'
+    42:   = text_field :purchase_link
+  app/views/items/new.html.haml:39:in `block in _app_views_items_new_html_haml__201358974396596349_69903347988200'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml__201358974396596349_69903347988200'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 17:45:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 17:45:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 217ms (Views: 215.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 17:45:42 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    36:   = number_field :available, '1'
+    37:   %br
+    38:   = label :item, :purchase_link, 'Item Link'
+    39:   = text_field :purchase_link
+    40:   %br
+    41:   = label :item, :description, 'description'
+    42:   %br
+  app/views/items/new.html.haml:39:in `block in _app_views_items_new_html_haml___2706041375152946314_70281675983380'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml___2706041375152946314_70281675983380'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 17:46:29 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 17:46:29 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (22.2ms)
+Completed 200 OK in 213ms (Views: 210.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 17:46:31 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x0000563cc328e690>:0x00007f1a38677ad8>
+Did you mean?  submit_tag):
+    43:   = text_area :description,size: "20x5"
+    44:   
+    45:   %br
+    46:   = submit 'Save Changes', :class => 'btn btn-primary'
+  app/views/items/new.html.haml:46:in `block in _app_views_items_new_html_haml___3847328233622757673_69875296101620'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml___3847328233622757673_69875296101620'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 17:47:19 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 17:47:19 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.8ms)
+Completed 200 OK in 216ms (Views: 212.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 17:47:22 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 17:48:41 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zg6w6NyfmXsHdyHa+P5l73vyL7UbEV+/Q4pfD23H0LwE7uiSCmnoMQ5J2x9nVt605Sj0jgOq8fWOQ66gO3odcg==", "category"=>{"title"=>"Shit"}, "name"=>{"title"=>"Fuck"}, "quantity"=>{"title"=>"1"}, "condition"=>{"title"=>"1"}, "available"=>{"title"=>"1"}, "purchase_link"=>{"title"=>"Youaremyson.com"}, "description"=>{"{:size=>\"20x5\"}"=>"I hate this project"}, "commit"=>"Save Changes"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  app/controllers/items_controller.rb:4:in `item_params'
+  app/controllers/items_controller.rb:38:in `create'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 17:58:05 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 17:58:05 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 216ms (Views: 211.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 17:58:08 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 17:58:29 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+G3xCCGVKIL3Pyv9bx8gVc5nxs/YLP2628CzQfQKy7JAe++9nAl6ALiBmpqFMfayeNEICfbHbwmpvNiUW3m4A==", "category"=>{"title"=>"Shit"}, "name"=>{"title"=>"Fuck"}, "quantity"=>{"title"=>"1"}, "condition"=>{"title"=>"1"}, "available"=>{"title"=>"1"}, "purchase_link"=>{"title"=>"Youaremyson.com"}, "description"=>{"{:size=>\"20x5\"}"=>"Shit"}, "commit"=>"Save Changes"}
+Unpermitted parameters: utf8, authenticity_token, category, name, quantity, condition, available, purchase_link, description, commit
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" DEFAULT VALUES
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 17:58:29 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 17:58:29 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:03:12 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:03:12 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (19.8ms)
+Completed 200 OK in 206ms (Views: 202.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:03:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (no implicit conversion of Symbol into String):
+    21:   
+    22:   %br
+    23:   = label :item, 'catagory'
+    24:   = text_field :item, :category, 'title'
+    25:   %br
+    26:   = label :item, :name, 'Name'
+    27:   = text_field :item, :name, 'title'
+  app/views/items/new.html.haml:24:in `block in _app_views_items_new_html_haml__4140788773466862449_69816246820440'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml__4140788773466862449_69816246820440'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.6ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:04:05 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:04:05 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 211ms (Views: 208.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:04:07 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (no implicit conversion of Symbol into String):
+    24:   = text_field :item, 'title'
+    25:   %br
+    26:   = label :item, :name, 'Name'
+    27:   = text_field :item, :name, 'title'
+    28:   %br
+    29:   = label :item, :quantity, 'Quantity'
+    30:   = number_field :item, :quantity, 'title'
+  app/views/items/new.html.haml:27:in `block in _app_views_items_new_html_haml___1917583168925603070_70305196389480'
+  app/views/items/new.html.haml:19:in `_app_views_items_new_html_haml___1917583168925603070_70305196389480'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:06:51 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:06:51 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (21.4ms)
+Completed 200 OK in 211ms (Views: 208.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:06:54 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:07:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tvKKdb6CA0/KZkbIwZe9/bu3m38h2Mh9mnIZBcTxDo7UEtIPaHRyBcNYvA1ePwamJW1ARDljZjdXu+iqkkzDQA==", "item"=>{"catagory"=>"ABC", "name"=>"shit", "quantity"=>"3", "condition"=>"3", "available"=>"3", "purchase_link"=>"dja0ns", "description"=>""}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "shit"], ["quantity", 3], ["condition", 3], ["available", 3], ["description", ""], ["purchase_link", "dja0ns"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:07:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:07:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tvKKdb6CA0/KZkbIwZe9/bu3m38h2Mh9mnIZBcTxDo7UEtIPaHRyBcNYvA1ePwamJW1ARDljZjdXu+iqkkzDQA==", "item"=>{"catagory"=>"ABC", "name"=>"shit", "quantity"=>"3", "condition"=>"3", "available"=>"3", "purchase_link"=>"dja0nsdj", "description"=>""}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "shit"], ["quantity", 3], ["condition", 3], ["available", 3], ["description", ""], ["purchase_link", "dja0nsdj"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 16ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:07:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:07:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')[0m
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:07:32 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&commit=Refresh" for 165.91.12.254 at 2019-10-17 18:07:50 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:07:50 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:08:02 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:08:23 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RTXcUvyP3n+rKWWOD/ebNu1VkhQEVhSdL/kKX7SYr6sn1YQoKnmvNaIXn0uQXyBtc49JLxztutfiMPvw4iViZQ==", "item"=>{"catagory"=>"dsjdf", "name"=>"sdfb", "quantity"=>"11", "condition"=>"1", "available"=>"1", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"jfghjsdfghjsdfkshgf"}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "sdfb"], ["quantity", 11], ["condition", 1], ["available", 1], ["description", "jfghjsdfghjsdfkshgf"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 16ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:08:23 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:08:23 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:17:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:17:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 233ms (Views: 229.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&commit=Refresh" for 165.91.12.254 at 2019-10-17 18:17:52 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.254 at 2019-10-17 18:17:52 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')[0m
+  Rendered items/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items?sort_by=category" for 165.91.12.254 at 2019-10-17 18:17:56 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"sort_by"=>"category"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:17:56 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items?sort_by=name" for 165.91.12.254 at 2019-10-17 18:17:58 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"sort_by"=>"name"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name" for 165.91.12.254 at 2019-10-17 18:17:58 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"name"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY name[0m
+  Rendered items/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:23:35 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name" for 165.91.12.254 at 2019-10-17 18:23:35 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"name"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY name
+  Rendered items/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 214ms (Views: 209.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:23:37 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:24:10 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3jBYRliW0MQpafSWSzDXzErHTESWG2j1nD3pRsSrQK+80AA8jmChjiBXDlPUmGyX1B2Xf46gxr9R9BjpkhaNYQ==", "item"=>{"catagory"=>"aaaaa", "name"=>"wdhd", "quantity"=>"4", "condition"=>"4", "available"=>"4", "purchase_link"=>"abc.com", "description"=>"things like this"}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "wdhd"], ["quantity", 4], ["condition", 4], ["available", 4], ["description", "things like this"], ["purchase_link", "abc.com"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 19ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:24:10 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name" for 165.91.12.254 at 2019-10-17 18:24:11 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"name"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY name
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&commit=Refresh" for 165.91.12.254 at 2019-10-17 18:24:35 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=name" for 165.91.12.254 at 2019-10-17 18:24:35 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"name"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY name[0m
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?sort_by=category" for 165.91.12.254 at 2019-10-17 18:24:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"sort_by"=>"category"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:24:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:32:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:32:15 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 213ms (Views: 210.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:32:18 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:32:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGq8OacHVXMakjmSFumcJdAtVR3h3o0CO56YJOS/ALnSiuRDcfEkOROsw1eJQSd+TveOJvllI0j2V2mLsgLNdw==", "item"=>{"catagory"=>"ABC", "name"=>"sdfb", "quantity"=>"2", "condition"=>"4", "available"=>"5", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"fgkkfdjghkfdljgh"}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "sdfb"], ["quantity", 2], ["condition", 4], ["available", 5], ["description", "fgkkfdjghkfdljgh"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:32:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:32:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:34:11 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:34:11 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 214ms (Views: 211.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:34:14 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:34:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"caY6UQyEwQ46Pcx54wmlrk7CD5ZXUj+6PwpLvpE2Cd4TRmIr2nKwRDMDNrx8oR710BjUrU/pkfDyw7oRx4vEEA==", "item"=>{"catagory"=>"aaa", "name"=>"sdfb", "quantity"=>"3", "condition"=>"3", "available"=>"3", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"kdfghjkfdghjfdghjfdknncnvnd"}, "commit"=>"Save Changes"}
+Unpermitted parameter: catagory
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "sdfb"], ["quantity", 3], ["condition", 3], ["available", 3], ["description", "kdfghjkfdghjfdghjfdknncnvnd"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:34:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:34:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:37:19 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:37:19 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (19.9ms)
+Completed 200 OK in 207ms (Views: 204.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:37:26 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:37:50 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EHgBEaZd5XEtThJMvm0y3wBm/KKPz5ux9Oq9UjcBtHpymFlrcKuUOyRw6IkhxYmEnrwnmZd0Nfs5I0z9Ybx5tA==", "item"=>{"Microscopes"=>"Microscopes", "name"=>"bbb", "quantity"=>"10", "condition"=>"9", "available"=>"1", "purchase_link"=>"ds.com", "description"=>"dajdnj\r\nsfbn\r\n"}, "commit"=>"Save Changes"}
+Unpermitted parameter: Microscopes
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "bbb"], ["quantity", 10], ["condition", 9], ["available", 1], ["description", "dajdnj\r\nsfbn\r\n"], ["purchase_link", "ds.com"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 19ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:37:50 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:37:50 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:38:38 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:38:39 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 213ms (Views: 208.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:38:43 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:38:57 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GlbuvYOgv4tx58rLponshq9lz/M133/MNc1augyJtbR4trbHVVbOwXjZMA45IVfdMb8UyC1k0Yb4BKsVWjR4eg==", "item"=>{"Microscopes"=>"Microscopes", "name"=>"cd", "quantity"=>"4", "condition"=>"4", "available"=>"4", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"fskfkkkkkk"}, "commit"=>"Save Changes"}
+Unpermitted parameter: Microscopes
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?)  [["name", "cd"], ["quantity", 4], ["condition", 4], ["available", 4], ["description", "fskfkkkkkk"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:38:57 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:38:57 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:40:03 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:40:03 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (21.4ms)
+Completed 200 OK in 215ms (Views: 211.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:40:08 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new" for 165.91.12.254 at 2019-10-17 18:40:32 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.254 at 2019-10-17 18:40:47 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VqnswYrFGFIAlLqPImq2PQysUEnMKtzephDSiQkS+RU0SbS7XDNpGAmqQEq9wg1mknaLctSRcpRr2SMmX6802w==", "item"=>{"category"=>"Microscopes\t", "name"=>"sdfb", "quantity"=>"4", "condition"=>"1", "available"=>"1", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"kfkjsdfjjsdf"}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("category", "name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category", "Microscopes\t"], ["name", "sdfb"], ["quantity", 4], ["condition", 1], ["available", 1], ["description", "kfkjsdfjjsdf"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 18ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/items" for 165.91.12.254 at 2019-10-17 18:40:47 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:40:47 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+  [1m[36mItem Load (1.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+
+
+Started GET "/" for 165.91.12.254 at 2019-10-17 18:41:47 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:41:47 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 216ms (Views: 212.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&categories%5BIncubators%5D=true&categories%5BLasers%5D=true&commit=Refresh" for 165.91.12.254 at 2019-10-17 18:41:56 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "categories"=>{"Incubators"=>"true", "Lasers"=>"true"}, "commit"=>"Refresh"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:41:56 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category[0m
+  Rendered items/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&categories%5BMicroscopes%5D=true&categories%5BGoggles%5D=true&categories%5BIncubators%5D=true&categories%5BLasers%5D=true&commit=Refresh" for 165.91.12.254 at 2019-10-17 18:41:58 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "categories"=>{"Microscopes"=>"true", "Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true"}, "commit"=>"Refresh"}
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true&sort_by=category" for 165.91.12.254 at 2019-10-17 18:41:59 +0000
+Cannot render console from 165.91.12.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}, "sort_by"=>"category"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')  ORDER BY category
+  Rendered items/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 165.91.12.71 at 2019-10-17 21:49:32 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.71 at 2019-10-17 21:49:32 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (29.3ms)
+Completed 200 OK in 275ms (Views: 272.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/1" for 165.91.12.71 at 2019-10-17 21:49:35 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+  [1m[36mItem Load (1.6ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+
+
+Started GET "/" for 165.91.12.71 at 2019-10-17 22:11:24 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.71 at 2019-10-17 22:11:25 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (23.5ms)
+Completed 200 OK in 265ms (Views: 261.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 165.91.12.71 at 2019-10-17 22:11:28 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.71 at 2019-10-17 22:12:04 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ye6NTyFAeK68FZmwApyuGURlzbKdItNpUaOceCBLYfwCJo590KPvggIcWsQNcQyrzfwOr6PPcs9BncAyz6jOyA==", "item"=>{"category"=>"Quantum", "name"=>"computing", "quantity"=>"1", "condition"=>"1", "available"=>"1", "purchase_link"=>"wait.com", "description"=>"Good thing"}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("category", "name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category", "Quantum"], ["name", "computing"], ["quantity", 1], ["condition", 1], ["available", 1], ["description", "Good thing"], ["purchase_link", "wait.com"]]
+  [1m[36m (11.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 21ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/items" for 165.91.12.71 at 2019-10-17 22:12:05 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.71 at 2019-10-17 22:12:05 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for 165.91.12.71 at 2019-10-17 22:12:24 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#new as HTML
+  Rendered items/new.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 165.91.12.71 at 2019-10-17 22:13:04 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4SIpuinQAxw3IsVFVQfcEPrGmK/+TXukM1Rg58LKTNUq6iqI2DOUMIkrBjFa6n6ic19bssCg2gIjajytLSnj4Q==", "item"=>{"category"=>"Microscopes", "name"=>"sdfb", "quantity"=>"2", "condition"=>"2", "available"=>"2", "purchase_link"=>"jfsdfghgjdhgf.com", "description"=>"dddddddd"}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("category", "name", "quantity", "condition", "available", "description", "purchase_link") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category", "Microscopes"], ["name", "sdfb"], ["quantity", 2], ["condition", 2], ["available", 2], ["description", "dddddddd"], ["purchase_link", "jfsdfghgjdhgf.com"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items
+Completed 302 Found in 16ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/items" for 165.91.12.71 at 2019-10-17 22:13:04 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+Redirected to https://665b7b7f389442f48a26c10e2617f36c.vfs.cloud9.us-east-2.amazonaws.com/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/items?category%5BGoggles%5D=true&category%5BIncubators%5D=true&category%5BLasers%5D=true&category%5BMicroscopes%5D=true" for 165.91.12.71 at 2019-10-17 22:13:04 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Parameters: {"category"=>{"Goggles"=>"true", "Incubators"=>"true", "Lasers"=>"true", "Microscopes"=>"true"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."category" IN ('Goggles', 'Incubators', 'Lasers', 'Microscopes')
+  Rendered items/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/13" for 165.91.12.71 at 2019-10-17 22:15:53 +0000
+Cannot render console from 165.91.12.71! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered items/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.2ms)

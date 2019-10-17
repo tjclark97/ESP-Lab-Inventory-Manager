@@ -1,0 +1,22 @@
+-# in app/views/items/show.html.haml
+
+%h3 Details about #{@item.name}
+
+%ul#details
+  %li
+    Category:
+    = @item.category
+  %li
+    Quantity:
+    = @item.quantity
+  %li
+    Condition:
+    = @item.condition
+
+%h4 Description:
+
+%p#description= @item.description
+
+= link_to 'Edit', edit_item_path(@item)
+= button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Back to item list', items_path

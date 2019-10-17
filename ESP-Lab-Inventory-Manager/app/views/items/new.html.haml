@@ -1,0 +1,48 @@
+-#%h2 Create New Movie
+
+-#= form_tag items_path do
+
+-#  = label :item, :title, 'Title'
+-#  = text_field :item, 'title'
+
+-#  = label :item, :rating, 'Rating'
+-# = select :item, :rating, ['G','PG','PG-13','R','NC-17']
+
+-# = label :item, :release_date, 'Released On'
+-# = date_select :item, :release_date
+
+-# = submit_tag 'Save Changes', :class => 'btn btn-primary'
+ 
+ 
+%h2 Create New Movie
+
+= form_tag items_path do
+  
+  
+  %br
+  = label :item, :category, 'Category'
+  = text_field :item, :category
+  %br
+  = label :item, :name, 'Name'
+  = text_field :item, :name
+  %br
+  = label :item, :quantity, 'Quantity'
+  = number_field :item, :quantity
+  %br
+  = label :item, :condition, 'Condition'
+  = number_field :item, :condition
+  %br
+  = label :item, :available, 'available'
+  = number_field :item, :available
+  %br
+  = label :item, :purchase_link, 'Item Link'
+  = text_field :item, :purchase_link
+  %br
+  = label :item, :description, 'description'
+  %br
+  = text_area :item, :description, size: "20x5"
+  
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
+
+
