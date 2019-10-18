@@ -8,6 +8,12 @@
     = check_box_tag "categories[#{category}]", true, @selected_categories[category]
   = submit_tag 'Refresh', :id => 'categories_submit'
 
+#main
+- @items.each do |item|
+  - if item.quantity < 5
+    %div.alert.alert-danger
+      #notice.message= "Item #{item.name} is at low quantity."
+
 %table#items.table.table-striped.col-md-12
   %thead
     %tr
