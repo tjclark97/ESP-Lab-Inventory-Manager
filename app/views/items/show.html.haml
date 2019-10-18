@@ -17,6 +17,11 @@
 
 %p#description= @item.description
 
+= form_tag item_path(@item), :method => :put do
+  = label :item, :quantity, 'Quantity'
+  = text_field :item, 'quantity'
+  = submit_tag 'Update Item', :class => 'btn btn-primary'
+
 = link_to 'Edit', edit_item_path(@item)
 = button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
 = link_to 'Back to item list', items_path
