@@ -1,7 +1,8 @@
-# RottenPotatoes demo app: getting started
+# SW Group
+Texas A&M 2019 Fall CSCE 431 team created for the design and implementation of the ESP Lab Inventory Manager
 
-This app is associated with the free [online
-course](http://www.saas-class.org) and (non-free)
-[ebook](http://www.saasbook.info) Engineering Software as a Service.
+## ESP Lab Inventory Manager
+Web application to organize, track, and store the inventory of the ESP Lab in the Emerging Technologies Building
 
-To start working on the Rails Intro homework, please follow [the instructions](instructions/README.md).
+## Access the App
+(https://esp-lab.herokuapp.com)
