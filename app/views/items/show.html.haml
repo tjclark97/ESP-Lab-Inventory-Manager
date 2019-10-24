@@ -14,8 +14,10 @@
     = @item.condition
 
 %h4 Description:
-
 %p#description= @item.description
+= link_to 'View Item List', "/items/#{@item.name}/show_specific_item_list/#{@item.name}", :specific_item_name => '#{@item.name}'
+
+%h4 Additional Options:
 
 = link_to 'Edit', edit_item_path(@item)
 = button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'

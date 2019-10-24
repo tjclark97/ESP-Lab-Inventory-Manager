@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     if params[:sort_by] == 'category' then @category_header = 'hilite' end
   end
 
-  def new
+  def new 
     # default: render 'new' template
   end
 
@@ -56,6 +56,11 @@ class ItemsController < ApplicationController
     @item.destroy
     flash[:notice] = "Item '#{@item.name}' deleted."
     redirect_to items_path
+  end
+
+  def show_specific_item_list
+    @item_list = Item.specific_item_list(params[:name])
+    @item_name = params[:name]
   end
 
 end
