@@ -1,0 +1,16 @@
+-#  This file is app/views/items/show_specific_item_list.html.haml
+%h2 #{@item_name} Item list
+
+%table#item_table.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Category
+      %th Availibility
+      %th Condition
+      %th Check-In/Check-Out
+  %tbody
+    - @item_list.each do |item|
+      %tr
+        %td= item.category
+        %td= item.available
+        %td= item.condition
