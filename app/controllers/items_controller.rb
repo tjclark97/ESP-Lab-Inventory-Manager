@@ -63,4 +63,14 @@ class ItemsController < ApplicationController
     @item_name = params[:name]
   end
 
+  def check_in_check_out
+    @item = Item.find params[:id]
+    if params[:check_in].present?
+      @item.update available: 1
+    elsif params[:check_out]
+      @item.update available: 0
+    end
+    redirect_to :back
+  end
+
 end

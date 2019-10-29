@@ -1,0 +1,16 @@
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/Users/killernova/.rvm/rubies/ruby-2.6.4/bin/ruby -I /Users/killernova/.rvm/rubies/ruby-2.6.4/lib/ruby/2.6.0 -r ./siteconf20191025-2813-pr439c.rb extconf.rb
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -14,3 +14,6 @@
         %td= item.category
         %td= item.available
         %td= item.condition
+        %td
+          = link_to 'CI', check_in_check_out_item_path(item, check_in: true), class: "btn btn-warning check-in #{item.available > 0 ? 'hidden' : ''}"
+          = link_to 'CO', check_in_check_out_item_path(item, check_out: true), class: "btn btn-warning check-out #{item.available > 0 ? '' : 'hidden'}"

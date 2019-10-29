@@ -1,0 +1,15 @@
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/killernova/.rvm/rubies/ruby-2.6.4/bin/ruby -I /Users/killernova/.rvm/rubies/ruby-2.6.4/lib/ruby/2.6.0 -r ./siteconf20191025-2813-1lnzbdf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/killernova/Documents/others/ESP-Lab-Inventory-Manager-develop/path/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 debug_inspector.bundle ./.gem.20191025-2813-1wwf7y5
