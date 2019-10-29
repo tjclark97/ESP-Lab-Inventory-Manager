@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     collection do
         get '/:id/show_specific_item_list/:name' => 'items#show_specific_item_list'
     end
+    member do
+      get :check_in_check_out
+    end
   end
   
   # Example resource route with options:
