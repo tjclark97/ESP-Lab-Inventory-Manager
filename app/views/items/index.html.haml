@@ -2,10 +2,8 @@
 %h2 All Lab Equipment
 
 = form_tag items_path, :id => 'categories_form', :method => :get do
-  Include:
-  - @all_categories.keys.each do |category|
-    = category
-    = check_box_tag "categories[#{category}]", true, @selected_categories[category]
+  Categories: 
+  = select(:Item, :selected_categories,  @all_categories.keys)
   = submit_tag 'Refresh', :id => 'categories_submit'
 
 %table#items.table.table-striped.col-md-12
@@ -14,7 +12,6 @@
       %th
       %th{:class => @category_header}= link_to 'Equipment Category', items_path(:sort_by => 'category'), :id => 'category_header'
       %th{:class => @name_header}= link_to 'Name', items_path(:sort_by => 'name'), :id => 'name_header'
-      %th
       %th Quantity
       %th Purchase Link
 
