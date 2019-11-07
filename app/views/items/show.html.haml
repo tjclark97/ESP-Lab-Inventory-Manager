@@ -7,14 +7,12 @@
     Category:
     = @item.category
   %li
-    Quantity:
+    Current Quantity:
     = @item.quantity
   %li
-    Condition:
-    = @item.condition
+    Description:
+    = @item.description
 
-%h4 Description:
-%p#description= @item.description
 = link_to 'View Item List', "/items/#{@item.name}/show_specific_item_list/#{@item.name}", :specific_item_name => '#{@item.name}', :class => 'btn btn-primary'
 
 %h4 Additional Options:
