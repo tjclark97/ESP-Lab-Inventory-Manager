@@ -21,13 +21,13 @@
     - @items.each do |item|
 
       %tr
-        - if item.quantity < 5
+        - if get_item_quantity(item.name) < 5
           %td= raw("&#x2757")
         - else
           %td
         %td= item.category
         %td= link_to "#{item.name}", item_path(item)
-        %td= item.quantity
-        %td= item.purchase_link
+        %td= get_item_quantity(item.name)
+        %td= link_to item.purchase_link, "http://#{item.purchase_link}"
 
 = link_to 'Add new item', new_item_path
