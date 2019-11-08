@@ -13,18 +13,22 @@ class ItemsController < ApplicationController
 
   def index
     @all_categories = Item.get_categories
-    @selected_categories = params[:category] || session[:category] || @all_categories
+    @selected_categories = params[:categories] || session[:category] || Category.all.pluck(:name)
     @sort_by = params[:sort_by] || session[:sort_by]
     
     session[:category] = @selected_categories
     #session[:sort_by] = @sort_by
-
-    @items = Item.with_categories(@selected_categories.keys)
+    if params[:categories].present?
+      categories = Category.where(name: params[:categories])
+    else 
+      categories = Category.all
+    end
+    @items = Item.where(category_id: categories.ids)
     #@items = @items.order(@sort_by)
 
-    if params[:category] != session[:category] or params[:sort_by] != session[:sort_by]
+    if params[:sort_by] != session[:sort_by]
       flash.keep
-      redirect_to items_path sort_by: @sort_by, category: @selected_categories
+      redirect_to items_path sort_by: @sort_by
     end
 
     if params[:sort_by] == 'name' then @name_header = 'hilite' end
@@ -36,7 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create!(item_params)
+    @item = Item.custom_create(item_params)
     flash[:notice] = "#{@item.name} was successfully created."
     redirect_to items_path
   end

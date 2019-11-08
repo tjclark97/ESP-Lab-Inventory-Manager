@@ -8,7 +8,17 @@ class Item < ActiveRecord::Base
 	end
 
 	def self.get_categories
-		@all_categories = { "Microscopes" => true, "Goggles" => true, "Incubators" => true, "Lasers" => true }
+		@all_categories = Category.all.map {|c| [c.name, true]}.to_h
+	end
+
+	def self.custom_create(params)
+		c = Category.find_or_create_by(name: params[:category].strip)
+		quantity = params[:quantity].to_i
+		item = nil
+		quantity.times do
+			item = Item.create(params.merge({category_id: c.id}))
+		end
+		item
 	end
 
 	def self.with_categories(categories)
