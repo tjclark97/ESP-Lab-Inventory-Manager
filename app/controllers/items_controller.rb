@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 
   def index
     @all_categories = Item.get_categories
-    @selected_categories = params[:categories] || session[:category] || Category.all.pluck(:name)
+    @selected_categories = params[:categories] || Category.all.pluck(:name) || session[:category] 
     @sort_by = params[:sort_by] || session[:sort_by]
     
     session[:category] = @selected_categories
@@ -23,7 +23,8 @@ class ItemsController < ApplicationController
     else 
       categories = Category.all
     end
-    @items = Item.where(category_id: categories.ids)
+    
+    @items = Item.with_categories(@selected_categories)
     #@items = @items.order(@sort_by)
 
     if params[:sort_by] != session[:sort_by]

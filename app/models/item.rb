@@ -22,7 +22,7 @@ class Item < ActiveRecord::Base
 	end
 
 	def self.with_categories(categories)
-		all_items = self.where({category: categories}).uniq
+		all_items = self.where({category: categories})
 
 		previous_names = []
 		index_list = []
