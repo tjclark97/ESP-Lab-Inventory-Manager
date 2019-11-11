@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     flash[:notice] = "Item '#{@item.name}' deleted."
-    redirect_to items_path
+    redirect_to "/items/#{@item.name}/show_specific_item_list/#{@item.name}"
   end
 
   def show_specific_item_list
