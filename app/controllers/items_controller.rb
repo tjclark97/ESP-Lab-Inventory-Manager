@@ -18,7 +18,10 @@ class ItemsController < ApplicationController
     session[:category] = @selected_categories
     session[:sort_by] = @sort_by
 
-    @items = Item.with_categories(@selected_categories.keys)
+    if @selected_categories == "All" then @items = Item.with_categories(@all_categories)
+    else @items = Item.with_categories(@selected_categories)
+    end
+    
     @items = @items.order(@sort_by)
 
     if params[:category] != session[:category] or params[:sort_by] != session[:sort_by]

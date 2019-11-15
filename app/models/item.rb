@@ -7,7 +7,9 @@ class Item < ActiveRecord::Base
 	end
 
 	def self.get_categories
-		@all_categories = { "Microscopes" => true, "Goggles" => true, "Incubators" => true, "Lasers" => true }
+		@temp = ["Microscopes", "Goggles", "Incubators", "Lasers"]
+		@all_categories = @temp.sort {|a,b| a<=>b}
+		@all_categories = ["All"] + @all_categories
 	end
 
 	def self.with_categories(categories)
