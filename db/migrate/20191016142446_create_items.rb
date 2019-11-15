@@ -3,7 +3,6 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :category
       t.string :name
-      t.integer :quantity
       t.integer :condition
       t.integer :available
       t.string :description
