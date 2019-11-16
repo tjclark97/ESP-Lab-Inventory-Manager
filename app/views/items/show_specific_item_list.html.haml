@@ -20,4 +20,9 @@
           = link_to 'CO', check_in_check_out_item_path(item, check_out: true), class: "btn btn-warning check-out #{item.available > 0 ? '' : 'hidden'}"
         %td= button_to 'Delete', item_path(item), method: :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
 
+= form_tag new_item_path(@item), :method => :put do
+  = label :item, :update_quantity, 'Add Quantity'
+  = number_field :item, :update_quantity
+  = submit_tag 'Update Item', :class => 'btn btn-primary'
+  
 = link_to 'Back to All Items List', items_path
