@@ -44,15 +44,14 @@ class Item < ActiveRecord::Base
 	def self.get_item_quantity(specific_item_name)
 		self.where({name: specific_item_name}).count
 	end
-		# def self.update_quantity(quantity_added)
-	# 	Item.category = Item.category
-	# 	Item.name = Item.name
-	# 	Item.quantity = Item.quantity + quantity_added
-	# 	Item.condition = 10;
-	# 	Item.available = 1;
-	# 	Item.purchase_link = Item.purchase_link
-	# 	Item.description = Item.description
-	# 	:create
-	# end
+	 def self.update_quantity(quantity_added)
+	 	Item.category = Item.category
+	 	Item.name = Item.name
+	 	Item.quantity = Item.quantity + quantity_added
+	 	Item.condition = 10;
+	 	Item.available = 1;
+	 	Item.purchase_link = Item.purchase_link
+	 	Item.description = Item.description
+	 end
 	
 end
