@@ -83,5 +83,10 @@ class ItemsController < ApplicationController
     end
     redirect_to :back
   end
+      
+  def update_quantity(quantity_added)
+      Item.quantity = Item.quantity + quantity_added  
+      @item = Item.custom_create(item_params)
+	end
 
 end
