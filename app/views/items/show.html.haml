@@ -16,7 +16,6 @@
 = link_to 'View Item List', "/items/#{@item.name}/show_specific_item_list/#{@item.name}", :specific_item_name => '#{@item.name}', :class => 'btn btn-primary'
 
 %h4 Additional Options:
-%h5 Change Item Quantity
 
 = link_to 'Edit', edit_item_path(@item), :class => 'btn btn-primary'
 = link_to 'Back to All Items List', items_path, :class => 'btn btn-primary'
