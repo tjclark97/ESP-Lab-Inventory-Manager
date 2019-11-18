@@ -1,4 +1,16 @@
-table#movies th.hilite {
+.navbar {
+	min-height: 38px;
+  	background-color: #f55e55;
+}
+
+.container {
+	min-height: 38px;
+	text-decoration: none;
+  	background-color: transparent;
+}
+
+table#items th.hilite {
+	color: #800000;
 	background-color: yellow;
 }
 
