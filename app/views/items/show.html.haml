@@ -7,23 +7,21 @@
     Category:
     = @item.category
   %li
-    Quantity:
+    Current Quantity:
     = @item.quantity
   %li
-    Condition:
-    = @item.condition
+    Description:
+    = @item.description
 
-%h4 Description:
-%p#description= @item.description
-= link_to 'View Item List', "/items/#{@item.name}/show_specific_item_list/#{@item.name}", :specific_item_name => '#{@item.name}'
+= link_to 'View Item List', "/items/#{@item.name}/show_specific_item_list/#{@item.name}", :specific_item_name => '#{@item.name}', :class => 'btn btn-primary'
 
 %h4 Additional Options:
+%h5 Change Item Quantity
 
 = form_tag item_path(@item), :method => :put do
-  = label :item, :quantity, 'Quantity'
+  = label :item, :quantity, 'New Quantity'
   = text_field :item, 'quantity'
   = submit_tag 'Update Item', :class => 'btn btn-primary'
 
-= link_to 'Edit', edit_item_path(@item)
-= button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
-= link_to 'Back to item list', items_path
+= link_to 'Edit', edit_item_path(@item), :class => 'btn btn-primary'
+= link_to 'Back to All Items List', items_path, :class => 'btn btn-primary'
