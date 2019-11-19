@@ -38,7 +38,7 @@ class Item < ActiveRecord::Base
 	end
 
 	def self.specific_item_list(specific_item_name)
-		@item_list = self.where({name: specific_item_name})
+		@item_list = self.where({name: specific_item_name}).order(:name)
 	end
 
 	def self.get_item_quantity(specific_item_name)
