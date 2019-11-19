@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 	@all_categories = {}
-	@item_list = []
+	@item_list
 	@all_items
 
 	def self.get_updated_categories
