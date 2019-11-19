@@ -13,4 +13,6 @@ items = [{:category => 'Microscopes', :name => 'AmScope B490 Compound Microscope
 
 items.each do |item|
   Item.create!(item)
+
+categories = [{:name => 'Microscopes'}]
 end
