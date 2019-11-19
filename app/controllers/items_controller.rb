@@ -59,8 +59,6 @@ class ItemsController < ApplicationController
 
   def destroy
     Item.destroy(params[:id])
-    puts "printing here"
-    puts params[:name]
     flash[:notice] = "Item '#{params[:name]}' deleted."
     redirect_to :back
   end
