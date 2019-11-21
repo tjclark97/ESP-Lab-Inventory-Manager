@@ -16,12 +16,5 @@
 = link_to 'View Item List', "/items/#{@item.id}/show_specific_item_list/#{@item.name}", :class => 'btn btn-primary'
 
 %h4 Additional Options:
-%h5 Change Item Quantity
-
-= form_tag item_path(@item), :method => :put do
-  = label :item, :quantity, 'New Quantity'
-  = text_field :item, 'quantity'
-  = submit_tag 'Update Item', :class => 'btn btn-primary'
-
 = link_to 'Edit', edit_item_path(@item), :class => 'btn btn-primary'
 = link_to 'Back to All Items List', items_path, :class => 'btn btn-primary'
