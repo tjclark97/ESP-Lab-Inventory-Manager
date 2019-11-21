@@ -31,3 +31,5 @@
         %td= link_to item.purchase_link, "http://#{item.purchase_link}"
 
 = link_to 'Add new item', new_item_path
+
+= render partial: 'paginate', locals: { resources: @items }

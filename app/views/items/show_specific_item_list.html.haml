@@ -21,3 +21,5 @@
         %td= button_to 'Delete', item_path(item, :name => @item_name), :confirm => 'Are you sure?', :class => 'btn btn-primary', method: :delete
 
 = link_to 'Back to All Items List', items_path
+
+= render partial: 'paginate', locals: { resources: @item_list }

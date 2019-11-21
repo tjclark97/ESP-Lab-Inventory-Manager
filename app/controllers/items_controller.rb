@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
       categories = Category.all
     end
     
-    @items = Item.with_categories(@selected_categories)
+    @items = Kaminari.paginate_array(Item.with_categories(@selected_categories)).page(params[:page]).per(10)
     #@items = @items.order(@sort_by)
 
     if params[:sort_by] != session[:sort_by]
@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   end
 
   def show_specific_item_list
-    @item_list = Item.specific_item_list(params[:name])
+    @item_list = Item.specific_item_list(params[:name]).page(params[:page]).per(10)
     @item_name = params[:name]
   end
 
