@@ -1,4 +1,3 @@
--#  This file is app/views/items/show_specific_item_list.html.haml
 %h2 #{@item_name} Item list
 
 %table#item_table.table.table-striped.col-md-12
@@ -8,6 +7,7 @@
       %th Availibility
       %th Condition
       %th Check-In/Check-Out
+      %th Change Condition
       %th Delete
   %tbody
     - @item_list.each do |item|
@@ -18,8 +18,17 @@
         %td
           = link_to 'CI', check_in_check_out_item_path(item, check_in: true), class: "btn btn-warning check-in #{item.available > 0 ? 'hidden' : ''}"
           = link_to 'CO', check_in_check_out_item_path(item, check_out: true), class: "btn btn-warning check-out #{item.available > 0 ? '' : 'hidden'}"
-        %td= button_to 'Delete', item_path(item, :name => @item_name), :confirm => 'Are you sure?', :class => 'btn btn-primary', method: :delete
+        %td
+          = form_tag item_path(item, :name => @item_name), :method => :put do
+            = label :item, :condition, 'Change Condition'
+            = number_field :item, :condition, min: 1, max: 10
+            = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
+        %td
+          = button_to 'Delete', item_path(item, :name => @item_name), :confirm => 'Are you sure?', :class => 'btn btn-primary', method: :delete
 
 = link_to 'Back to All Items List', items_path
+<<<<<<< HEAD
 
 = render partial: 'paginate', locals: { resources: @item_list }
+=======
+>>>>>>> 88b251a2c0691fbe53562de35a79d40832fcc7f7
