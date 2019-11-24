@@ -13,7 +13,7 @@
     - @item_list.each do |item|
       %tr
         %td= item.category
-        %td= item.available
+        %td= (item.available == 1 ? "Yes" : "No")
         %td= item.condition
         %td
           = link_to 'CI', check_in_check_out_item_path(item, check_in: true), class: "btn btn-warning check-in #{item.available > 0 ? 'hidden' : ''}"
