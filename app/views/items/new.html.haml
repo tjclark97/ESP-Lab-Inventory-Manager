@@ -33,7 +33,7 @@
   = number_field :item, :condition
   %br
   = label :item, :available, 'Available'
-  = number_field :item, :available
+  = number_field :item, :available, min: 0, max: 1
   %br
   = label :item, :purchase_link, 'Item Link'
   = text_field :item, :purchase_link
