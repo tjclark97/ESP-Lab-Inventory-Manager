@@ -21,7 +21,7 @@
   
   %br
   = label :item, :category, 'Category'
-  = text_field :item, :category
+  = select :item, 'category', Category.all.pluck(:name)
   %br
   = label :item, :name, 'Name'
   = text_field :item, :name
