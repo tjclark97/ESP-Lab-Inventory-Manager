@@ -18,22 +18,19 @@ class ItemsController < ApplicationController
     
     session[:category] = @selected_categories
     #session[:sort_by] = @sort_by
-    if params[:categories].present?
+    if params[:categories].present? && params[:categories] != "All"
       categories = Category.where(name: params[:categories])
     else 
       categories = Category.all
     end
     
-    @items = Kaminari.paginate_array(Item.with_categories(@selected_categories)).page(params[:page]).per(10)
-    #@items = @items.order(@sort_by)
-
-    if params[:sort_by] != session[:sort_by]
-      flash.keep
-      redirect_to items_path sort_by: @sort_by
+    # get the items to display from selected categories
+    if (params[:cat].to_s == "All") || !params[:cat].present? then 
+      @items = Kaminari.paginate_array(Item.with_categories(Category.all.pluck(:name))).page(params[:page]).per(10)
+    else 
+      @items = Kaminari.paginate_array(Item.with_categories(params[:cat].to_s)).page(params[:page]).per(10)
     end
 
-    if params[:sort_by] == 'name' then @name_header = 'hilite' end
-    if params[:sort_by] == 'category' then @category_header = 'hilite' end
   end
 
   def new 
