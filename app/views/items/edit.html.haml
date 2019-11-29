@@ -10,18 +10,11 @@
   = label :item, :name, 'Name'
   = text_field :item, 'name'
 
-  = label :item, :condition, 'Condition'
-  = text_field :item, 'condition'
-
   = label :item, :available, "Availability"
   = select :item, :available, ['1', '0']
 
   = label :item, :description, "Description"
   = text_field :item, 'description'
-
-  - if (get_item_quantity(@item.name) == 1)
-    = label :item, :serial, "Serial"
-    = text_field :item, 'serial'
     
   = label :item, :purchase_link, "Purchase Link"
   = text_field :item, "purchase_link"
