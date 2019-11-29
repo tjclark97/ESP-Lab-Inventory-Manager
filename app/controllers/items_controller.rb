@@ -50,10 +50,15 @@ class ItemsController < ApplicationController
   end
 
   def update
+    old_item = Item.find params[:id]
     @item = Item.find params[:id]
     @item.update_attributes!(item_params)
     flash[:notice] = "#{@item.name} was successfully updated."
-    redirect_to item_path(@item)
+    if (old_item.condition != @item.condition or old_item.serial != @item.serial)
+      redirect_to :back
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   def destroy
