@@ -19,6 +19,10 @@
   = label :item, :description, "Description"
   = text_field :item, 'description'
 
+  - if (get_item_quantity(@item.name) == 1)
+    = label :item, :serial, "Serial"
+    = text_field :item, 'serial'
+    
   = label :item, :purchase_link, "Purchase Link"
   = text_field :item, "purchase_link"
 
