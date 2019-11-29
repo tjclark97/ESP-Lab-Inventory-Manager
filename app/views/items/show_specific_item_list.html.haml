@@ -24,7 +24,7 @@
           = form_tag item_path(item, :name => @item_name), :method => :put do
             = label :item, :condition, 'Change Condition'
             = number_field :item, :condition, min: 1, max: 10
-            = submit_tag 'Update Item', method: :show_edit, :class => 'btn btn-primary'
+            = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
         %td
           = button_to 'Delete', item_path(item, :name => @item_name), :confirm => 'Are you sure?', :class => 'btn btn-primary', method: :delete
         %td= (item.serial == nil ? "No Serial" : item.serial)
@@ -32,7 +32,7 @@
           = form_tag item_path(item, :name => @item_name), :method => :put do
             = label :item, :serial, 'Change Serial'
             = text_field :item, :serial
-            = submit_tag 'Update Item', method: :show_edit, :class => 'btn btn-primary'
+            = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
 
 = link_to 'Back to All Items List', items_path
 
