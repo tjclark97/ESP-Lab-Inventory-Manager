@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20191108023243) do
     t.integer "available"
     t.string  "description"
     t.string  "purchase_link"
+    t.string  "serial"
     t.integer "category_id"
   end
 
