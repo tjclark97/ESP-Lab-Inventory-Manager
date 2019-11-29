@@ -23,6 +23,7 @@
       %tr
         - if get_item_quantity(item.name) < 5
           %td= raw("&#x2757")
+          - flash[:notice] = "#{item.name} is at low quantity."
         - else
           %td
         %td= item.category

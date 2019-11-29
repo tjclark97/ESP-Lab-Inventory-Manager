@@ -24,13 +24,15 @@ class ItemsController < ApplicationController
       categories = Category.all
     end
     
+    
     # get the items to display from selected categories
     if (params[:cat].to_s == "All") || !params[:cat].present? then 
       @items = Kaminari.paginate_array(Item.with_categories(Category.all.pluck(:name))).page(params[:page]).per(10)
     else 
       @items = Kaminari.paginate_array(Item.with_categories(params[:cat].to_s)).page(params[:page]).per(10)
     end
-
+    
+    flash[:notice] = "Item list was filtered by #{params[:cat].to_s}."
   end
 
   def new 
