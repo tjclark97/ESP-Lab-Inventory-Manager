@@ -1,4 +1,4 @@
-%h2 #{@item_name} Item list
+%h3 #{@item_name} Item list
 
 %table#item_table.table.table-striped.col-md-12
   %thead
@@ -34,7 +34,7 @@
             = text_field :item, :serial
             = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
 
-= link_to 'Back to All Items List', items_path
+= link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 
 
 = render partial: 'paginate', locals: { resources: @item_list }
