@@ -4,22 +4,22 @@
 
 = form_tag item_path(@item), :method => :put do
 
-  = label :item, :category, 'Category'
-  = select :item, 'category', Category.all.pluck(:name)
+  %center= label :item, :category, 'Category'
+  %center= select :item, 'category', Category.all.pluck(:name)
+  %h5
+  %center= label :item, :name, 'Name'
+  %center= text_field :item, 'name', size: "20x5"
+  %h5
+  %center= label :item, :available, "Availability"
+  %center= select :item, :available, ['1', '0']
+  %h5
+  %center= label :item, :description, "Description"
+  %center= text_area :item, 'description', :size => '40x5'
+  %h5 
+  %center= label :item, :purchase_link, "Purchase Link"
+  %center= text_field :item, "purchase_link"
 
-  = label :item, :name, 'Name'
-  = text_field :item, 'name'
-
-  = label :item, :condition, 'Condition'
-  = text_field :item, 'condition'
-
-  = label :item, :available, "Availability"
-  = select :item, :available, ['1', '0']
-
-  = label :item, :description, "Description"
-  = text_field :item, 'description'
-
-  = label :item, :purchase_link, "Purchase Link"
-  = text_field :item, "purchase_link"
-
-  = submit_tag 'Update Item Info', :class => 'btn btn-primary'
+  %h6
+  %center= submit_tag 'Update Item Info', {:class => 'btn btn-primary'}
+%br
+  = link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}

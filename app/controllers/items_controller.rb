@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def item_params
-    params.require(:item).permit(:category, :name, :quantity, :condition, :available, :description, :purchase_link)
+    params.require(:item).permit(:category, :name, :quantity, :condition, :available, :description, :purchase_link, :serial)
   end
 
   def show
@@ -13,17 +13,15 @@ class ItemsController < ApplicationController
 
   def index
     @all_categories = Item.get_categories
-    @selected_categories = params[:categories] || Category.all.pluck(:name) || session[:category] 
-    @sort_by = params[:sort_by] || session[:sort_by]
+    @selected_categories = params[:categories] || Category.all.pluck(:name) || session[:category]
     
     session[:category] = @selected_categories
-    #session[:sort_by] = @sort_by
+    session[:sort_by] = @sort_by
     if params[:categories].present? && params[:categories] != "All"
       categories = Category.where(name: params[:categories])
     else 
       categories = Category.all
     end
-    
     
     # get the items to display from selected categories
     if (params[:cat].to_s == "All") || !params[:cat].present? then 
@@ -31,7 +29,7 @@ class ItemsController < ApplicationController
     else 
       @items = Kaminari.paginate_array(Item.with_categories(params[:cat].to_s)).page(params[:page]).per(10)
     end
-    
+
     flash[:notice] = "Item list was filtered by #{params[:cat].to_s}."
   end
 
@@ -50,10 +48,16 @@ class ItemsController < ApplicationController
   end
 
   def update
+    old_item = Item.find params[:id]
     @item = Item.find params[:id]
     @item.update_attributes!(item_params)
     flash[:notice] = "#{@item.name} was successfully updated."
-    redirect_to item_path(@item)
+
+    if (old_item.condition != @item.condition or old_item.serial != @item.serial)
+      redirect_to :back
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   def destroy

@@ -1,18 +1,3 @@
--#%h2 Create New Movie
-
--#= form_tag items_path do
-
--#  = label :item, :title, 'Title'
--#  = text_field :item, 'title'
-
--#  = label :item, :rating, 'Rating'
--# = select :item, :rating, ['G','PG','PG-13','R','NC-17']
-
--# = label :item, :release_date, 'Released On'
--# = date_select :item, :release_date
-
--# = submit_tag 'Save Changes', :class => 'btn btn-primary'
- 
  
 %h2 Add a New Item
 
@@ -20,29 +5,29 @@
   
   
   %br
-  = label :item, :category, 'Category'
-  = select :item, 'category', Category.all.pluck(:name)
+  %center= label :item, :category, 'Category'
+  %center= select :item, 'category', Category.all.pluck(:name)
   %br
-  = label :item, :name, 'Name'
-  = text_field :item, :name
+  %center= label :item, :name, 'Name'
+  %center= text_field :item, :name, :class => 'body1'
   %br
-  = label :item, :quantity, 'Quantity'
-  = number_field :item, :quantity
+  %center= label :item, :quantity, 'Quantity'
+  %center= number_field :item, :quantity, :class => 'body1'
   %br
-  = label :item, :condition, 'Condition'
-  = number_field :item, :condition
+  %center= label :item, :condition, 'Condition'
+  %center= number_field :item, :condition, :class => 'body1'
   %br
-  = label :item, :available, 'Available'
-  = number_field :item, :available, min: 0, max: 1
+  %center= label :item, :available, 'Available'
+  %center= number_field :item, :available, min: 0, max: 1, :class => 'body1'
   %br
-  = label :item, :purchase_link, 'Item Link'
-  = text_field :item, :purchase_link
+  %center= label :item, :purchase_link, 'Item Link'
+  %center= text_field :item, :purchase_link, :class => 'body1'
   %br
-  = label :item, :description, 'Description'
+  %center= label :item, :description, 'Description'
   %br
-  = text_area :item, :description, size: "20x5"
+  %center= text_area :item, 'description', :size => '40x5'
   
   %br
-  = submit_tag 'Save Changes', :class => 'btn btn-primary'
-
+  %center= submit_tag 'Save Changes', {:style => 'text-decoration: none', :class => 'btn btn-primary'}
+  = link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 

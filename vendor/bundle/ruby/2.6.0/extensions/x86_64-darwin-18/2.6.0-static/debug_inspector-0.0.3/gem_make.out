@@ -1,0 +1,15 @@
+current directory: /Users/ervinlopez/Documents/dev/csce431/lmi_v1.0/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/ervinlopez/.rbenv/versions/2.6.3/bin/ruby -I /Users/ervinlopez/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20191121-52447-k25b28.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ervinlopez/Documents/dev/csce431/lmi_v1.0/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/ervinlopez/Documents/dev/csce431/lmi_v1.0/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/ervinlopez/Documents/dev/csce431/lmi_v1.0/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20191121-52447-1iuvupv

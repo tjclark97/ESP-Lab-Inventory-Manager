@@ -1,4 +1,4 @@
-%h2 #{@item_name} Item list
+%h3 #{@item_name} Item list
 
 %table#item_table.table.table-striped.col-md-12
   %thead
@@ -9,6 +9,8 @@
       %th Check-In/Check-Out
       %th Change Condition
       %th Delete
+      %th Serial
+      %th Change Serial
   %tbody
     - @item_list.each do |item|
       %tr
@@ -25,9 +27,17 @@
             = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
         %td
           = button_to 'Delete', item_path(item, :name => @item_name), :confirm => 'Are you sure?', :class => 'btn btn-primary', method: :delete
+        %td= (item.serial == nil ? "No Serial" : item.serial)
+        %td
+          = form_tag item_path(item, :name => @item_name), :method => :put do
+            = label :item, :serial, 'Change Serial'
+            = text_field :item, :serial
+            = submit_tag 'Update Item', method: :update, :class => 'btn btn-primary'
 
-= link_to 'Back to All Items List', items_path
+= link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 
 
 = render partial: 'paginate', locals: { resources: @item_list }
+
+
 

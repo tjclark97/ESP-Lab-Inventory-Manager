@@ -3,18 +3,17 @@
 %h3 Details about #{@item.name}
 
 %ul#details
-  %li
+  %h5
     Category:
     = @item.category
-  %li
+  %h5
     Current Quantity:
     = @item.quantity
-  %li
+  %h5
     Description:
     = @item.description
 
-= link_to 'View Item List', "/items/#{@item.id}/show_specific_item_list/#{@item.name}", :class => 'btn btn-primary'
+= link_to 'View Item List', "/items/#{@item.id}/show_specific_item_list/#{@item.name}", {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 
-%h4 Additional Options:
-= link_to 'Edit', edit_item_path(@item), :class => 'btn btn-primary'
-= link_to 'Back to All Items List', items_path, :class => 'btn btn-primary'
+= link_to 'Edit', edit_item_path(@item), {:style => 'text-decoration: none', :class => 'btn btn-primary'}
+= link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}

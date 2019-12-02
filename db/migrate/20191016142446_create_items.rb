@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :condition
       t.integer :available
       t.string :description
+      t.string :serial
       t.string :purchase_link
     end
   end
