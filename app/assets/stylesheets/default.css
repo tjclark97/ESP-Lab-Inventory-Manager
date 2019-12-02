@@ -134,11 +134,11 @@ table#items th.hilite {
 }.table-primary,.table-primary>td
 
 .table-primary>th {
-	background-color:#b8daff
+	background-color:#b8daff;
 }.table-primary tbody+tbody,.table-primary td,.table-primary th
 
 .table-primary thead th {
-	border-color:#7abaff
+	border-color:#7abaff;
 }.table-hover 
 
 .table-primary:hover {
@@ -362,7 +362,6 @@ a.btn {
 .btn-primary {
 	color:#fff;
 	background-color:	#800000;
-	border-color:
 	border-color:#000000
 }
 
