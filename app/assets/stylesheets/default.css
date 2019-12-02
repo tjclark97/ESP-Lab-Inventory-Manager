@@ -86,7 +86,7 @@ table#items th.hilite {
 	vertical-align:top;
 	border-top:1px 
 	solid #dee2e6
-	
+
 }
 
 .table thead th {
@@ -310,7 +310,7 @@ table#items th.hilite {
 }
 
 .h6,h6 {
-	font-size:1.15rem
+	font-size:1.15rem;
 	border:.5px solid transparent;
 	padding:.15rem .15rem;
 }
