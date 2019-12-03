@@ -2,7 +2,7 @@ Given("I am on the home page") do
     visit '/'
   end
   
-  Then("I should see the {string} link") do |string|
+  Then("I 7should see the {string} link") do |string|
     visit '/'
   end
   
@@ -15,9 +15,9 @@ Given("I am on the home page") do
   end
 
   When("I press2 {string}") do |string|
-    visit '/edit?utf8=✓&categoryAction=Add&categoryName=Category+Name&commit=Update+Category+List'
+    visit '/categories/edit'
   end
 
   Then("I should see that1 {string}") do |string|
-    visit '/categories/edit?utf8=✓&categoryAction=Add&categoryName=Category+Name&commit=Update+Category+List'
+    visit '/categories/edit'
   end

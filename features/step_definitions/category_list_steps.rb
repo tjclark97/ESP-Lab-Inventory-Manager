@@ -1,4 +1,4 @@
-Given("I am on the home page") do
+Given("I am on the home page8") do
   visit '/'
 end
 
@@ -10,6 +10,6 @@ When("I choose Microscopes and press {string}") do |string|
   visit '/'
 end
 
-Then("I should see {string}") do |string|
-  visit '/items?utf8=✓&cat=Microscopes&commit=Refresh'
+Then("I should see4 {string}") do |string|
+  visit '/items'
 end
