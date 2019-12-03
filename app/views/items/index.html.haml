@@ -7,7 +7,7 @@
   Categories:
   = select_tag(:cat, options_for_select(["All"] + Category.all.pluck(:name)) ) 
   = submit_tag 'Refresh', :id => 'categories_submit', :class => 'btn-secondary'
-  = link_to 'Edit categories', categories_edit_path, :class => 'btn-secondary'
+  = link_to 'Edit categories', categories_edit_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 %br
 
 %table#items.table.table-striped.col-md-12
