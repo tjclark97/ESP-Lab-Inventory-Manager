@@ -22,7 +22,7 @@
   %br
   %br
   = label :item, :available, 'Available'
-  = number_field :item, :available, min: 0, max: 1, :class => 'body1'
+  = select :item, :available, options_for_select([['YES', 1], ['NO', 0]]),:class => 'body1'
   %br
   %br
   = label :item, :purchase_link, 'Item Link'

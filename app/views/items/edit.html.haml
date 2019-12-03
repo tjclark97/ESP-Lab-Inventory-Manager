@@ -13,7 +13,7 @@
   %br
   %br
   = label :item, :available, "Availability"
-  = select :item, :available, ['1', '0']
+  = select :item, :available, options_for_select([['YES', 1], ['NO', 0]]),:class => 'body1'
   %br
   %br
   = label :item, :description, "Description"
