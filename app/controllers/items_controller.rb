@@ -60,6 +60,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit_categories
+    # default: render 'edit_categories' template
+  end
+
   def destroy
     Item.destroy(params[:id])
     flash[:notice] = "Item '#{params[:name]}' deleted."

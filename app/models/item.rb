@@ -44,4 +44,5 @@ class Item < ActiveRecord::Base
 	def self.get_item_quantity(specific_item_name)
 		self.where({name: specific_item_name}).count
 	end
+
 end
