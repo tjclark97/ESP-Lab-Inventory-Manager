@@ -1,14 +1,15 @@
 %h2 Add or Remove Categories
 
 = form_tag categories_edit_path, :method => "get" do
-
-  %center= label :category, :name, 'Action'
-  %center= select_tag :categoryAction, options_for_select(["Add", "Remove"])
-  %br
-  %center= label :category, :name, 'Name'
-  %center= text_field_tag :categoryName, ""
-  %br
-
-  %center= submit_tag 'Update Category List', {:style => 'text-decoration: none', :class => 'btn btn-secondary'}
+    %br
+    = label :category, :name, 'Action'
+    = select_tag :categoryAction, options_for_select(["Add", "Remove"])
+    %br
+    %br
+    = label :category, :name, 'Name'
+    = text_field_tag :categoryName, ""
+    %br
+    %br
+    = submit_tag 'Update Category List', {:style => 'text-decoration: none', :class => 'btn btn-secondary'}
 %br
 = link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}

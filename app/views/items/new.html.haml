@@ -5,29 +5,38 @@
   
   
   %br
-  %center= label :item, :category, 'Category'
-  %center= select :item, 'category', Category.all.pluck(:name)
+  = label :item, :category, 'Category'
+  = select :item, 'category', Category.all.pluck(:name)
   %br
-  %center= label :item, :name, 'Name'
-  %center= text_field :item, :name, :class => 'body1'
   %br
-  %center= label :item, :quantity, 'Quantity'
-  %center= number_field :item, :quantity, :class => 'body1'
+  = label :item, :name, 'Name'
+  = text_field :item, :name, :class => 'body1'
   %br
-  %center= label :item, :condition, 'Condition'
-  %center= number_field :item, :condition, :class => 'body1'
   %br
-  %center= label :item, :available, 'Available'
-  %center= number_field :item, :available, min: 0, max: 1, :class => 'body1'
+  = label :item, :quantity, 'Quantity'
+  = number_field :item, :quantity, :class => 'body1'
   %br
-  %center= label :item, :purchase_link, 'Item Link'
-  %center= text_field :item, :purchase_link, :class => 'body1'
   %br
-  %center= label :item, :description, 'Description'
+  = label :item, :condition, 'Condition'
+  = number_field :item, :condition, :class => 'body1'
   %br
-  %center= text_area :item, 'description', :size => '40x5'
+  %br
+  = label :item, :available, 'Available'
+  = number_field :item, :available, min: 0, max: 1, :class => 'body1'
+  %br
+  %br
+  = label :item, :purchase_link, 'Item Link'
+  = text_field :item, :purchase_link, :class => 'body1'
+  %br
+  %br
+  = label :item, :description, 'Description'
+  %br
+  = text_area :item, 'description', :size => '40x5'
   
   %br
-  %center= submit_tag 'Save Changes', {:style => 'text-decoration: none', :class => 'btn btn-primary'}
-  = link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
+  %br
+  = submit_tag 'Save Changes', {:style => 'text-decoration: none', :class => 'btn btn-primary'}
+  %br
+  %br
+= link_to 'Back to All Items List', items_path, {:style => 'text-decoration: none', :class => 'btn btn-primary'}
 

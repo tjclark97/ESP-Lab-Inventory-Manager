@@ -58,6 +58,10 @@ table#items th.hilite {
 	box-shadow: 0 0 0 .2rem rgba(222, 170, 12, .5)
 }
 
+.form {
+    margin-left: 60px;
+}
+
 .custom-paginate {
 	display: flex;
 	margin-top: 20px;
